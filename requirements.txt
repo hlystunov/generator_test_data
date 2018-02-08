@@ -1,0 +1,3 @@
+elizabeth==0.4.0
+pytelegrambotapi==3.5.2
+telebot==0.0.3

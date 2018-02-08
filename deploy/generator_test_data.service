@@ -1,0 +1,17 @@
+[Unit]
+Description=<generator_test_data>
+After=network.target
+
+[Service]
+Type=simple
+PIDFile=/var/apps/generator_test_data/tmp/run.pid
+User=root
+Group=root
+WorkingDirectory=/var/apps/generator_test_data
+Environment="PATH=/var/apps/generator_test_data/venv/bin"
+ExecStart=/var/apps/generator_test_data/venv/bin/python bot.py
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
