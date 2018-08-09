@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from config import token, actions
 from telebot import TeleBot, types
 import logging

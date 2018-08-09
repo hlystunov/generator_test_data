@@ -1,4 +1,3 @@
-# -- coding utf-8 --
 token = '###################################'
 
 from collections import OrderedDict
