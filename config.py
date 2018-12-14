@@ -4,7 +4,7 @@ from collections import OrderedDict
 
 from returns import \
     inn_entity, inn_individual, ogrn_entity, ogrn_individual, \
-    snils, full_name, birdthay, login, mail, phone, uuid, guid
+    snils, full_name, birdthay, login, mail, phone, uuid, guid, oms
 
 actions = OrderedDict([
     ('ИНН', inn_entity),
@@ -19,4 +19,5 @@ actions = OrderedDict([
     ('Телефон', phone),
     ('GUID', guid),
     ('UUID', uuid),
+    ('ЕНП ОМС', oms),
 ])

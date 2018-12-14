@@ -127,3 +127,14 @@ def ogrn_individual():
 
         nums.append(0) if ogrn == 10 else nums.append(ogrn)
         return ''.join([str(x) for x in nums])
+
+
+def luhn_residue(digits):
+    return sum(sum(divmod(int(d)*(1 + i%2), 10))
+                 for i, d in enumerate(digits[::-1])) % 10
+
+
+def oms():
+    part = ''.join(str(random.randrange(0, 9)) for _ in range(16 - 1))
+    res = luhn_residue('{}{}'.format(part, 0))
+    return '{}{}'.format(part, -res % 10)
