@@ -18,6 +18,7 @@ def start(m):
     request = {
         'name': m.chat.first_name,
         'text': m.text,
+        'id': m.chat.id,
     }
 
     if m.chat.last_name: request['lastname'] = m.chat.last_name
