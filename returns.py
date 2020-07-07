@@ -138,3 +138,40 @@ def oms():
     part = ''.join(str(random.randrange(0, 9)) for _ in range(16 - 1))
     res = luhn_residue('{}{}'.format(part, 0))
     return '{}{}'.format(part, -res % 10)
+
+
+def okpo():
+    return get_okpo(False)
+
+
+def okpo_individual():
+    return get_okpo(True)
+
+
+def get_okpo(infividual):
+    nums = [
+        random.randint(0, 9)
+        for _ in range(0, 9 if infividual else 7)
+    ]
+
+    summ = 0
+
+    for index, i in enumerate(nums):
+        summ += (index+1)* i
+
+    control = summ % 11
+
+    if control == 10:
+        summ = 0
+
+        for index, i in enumerate(nums):
+            summ += (index + 3) * i
+
+        control = summ % 11
+
+        if control == 10:
+            control = 0
+
+    nums.append(control)
+
+    return ''.join([str(x) for x in nums])

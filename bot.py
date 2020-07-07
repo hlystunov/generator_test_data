@@ -13,6 +13,7 @@ bot = TeleBot(token)
 keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 keyboard.add(*[types.KeyboardButton(_) for _ in actions])
 
+
 @bot.message_handler()
 def start(m):
     request = {
@@ -26,6 +27,7 @@ def start(m):
 
     answer = actions[m.text]() if m.text in actions else 'Выберите значение из списка'
     bot.send_message(m.chat.id, answer, reply_markup=keyboard)
+
 
 if __name__ == '__main__':
      bot.polling(none_stop=True)
