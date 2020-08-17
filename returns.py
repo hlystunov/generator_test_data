@@ -165,7 +165,12 @@ def get_okpo(infividual):
         summ = 0
 
         for index, i in enumerate(nums):
-            summ += (index + 3) * i
+            j = index + 3
+
+            if j > 10:
+                j = j % 10
+
+            summ += j * i
 
         control = summ % 11
 
