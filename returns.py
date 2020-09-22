@@ -100,7 +100,8 @@ def inn(l):
 # ОГРН ЮЛ
 def ogrn_entity():
     nums = [
-        random.randint(1, 1) if x == 0
+        1 if x == 0
+        else 0 if x in (3, 4)
         else random.randint(0, 9)
         for x in range(0, 11)
     ]
@@ -115,6 +116,7 @@ def ogrn_individual():
     while True:
         nums = [
             random.randint(3, 4) if x == 0
+            else 0 if x in (3, 4)
             else random.randint(0, 9)
             for x in range(0, 13)
         ]
