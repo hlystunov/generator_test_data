@@ -18,6 +18,9 @@ def uuid(): return uuid4().hex
 # GUID
 def guid(): return str(uuid4()).upper()
 
+# GUID LOWER
+def guid_lower(): return str(uuid4()).lower()
+
 # ИНН ЮЛ
 def inn_entity(): return inn(10)
 
