@@ -25,7 +25,7 @@
 
 ### Требуемые библиотеки:
 
-  - elizabeth;
+  - mimesis;
   - pytelegrambotapi;
   - telebot.
 
