@@ -1,16 +1,18 @@
 import random, re
-from elizabeth import Personal
+from mimesis import Person
+from mimesis.enums import Gender
+from mimesis.locales import Locale
 from datetime import date
 from uuid import uuid4
 
 # Логин
-def login(): return Personal('ru').username()
+def login(): return Person(Locale.RU).username()
 
 # E-mail
-def mail(): return Personal('ru').email()
+def mail(): return Person(Locale.RU).email()
 
 # Номер телефона
-def phone(): return Personal('ru').telephone('8(9##)###-##-##')
+def phone(): return Person(Locale.RU).telephone('8(9##)###-##-##')
 
 # UUID
 def uuid(): return uuid4().hex
@@ -29,7 +31,7 @@ def inn_individual(): return inn(12)
 
 # ФИО
 def full_name():
-    FIO = re.findall(r'\S+|\s+', Personal('ru').full_name(gender='male'))
+    FIO = re.findall(r'\S+|\s+', Person(Locale.RU).full_name(gender=Gender.MALE))
     return FIO[2] + " " + FIO[0] + " Тестович"
 
 # Дата рождения
