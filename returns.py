@@ -164,7 +164,7 @@ def get_okpo(infividual):
     summ = 0
 
     for index, i in enumerate(nums):
-        summ += (index+1)* i
+        summ += (index+1) * i
 
     control = summ % 11
 
@@ -187,3 +187,13 @@ def get_okpo(infividual):
     nums.append(control)
 
     return ''.join([str(x) for x in nums])
+
+# Серия и номер паспорта
+def passport_number():
+    nums = [
+        random.randint(0, 9)
+        for _ in range(0, 10)
+    ]
+
+    return ''.join(map(str, nums[:4])) + ' ' + ''.join(map(str, nums[4:]))
+
