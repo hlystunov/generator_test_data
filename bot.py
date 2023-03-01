@@ -26,7 +26,7 @@ def start(m):
     logger.warning(request)
 
     answer = actions[m.text]() if m.text in actions else 'Выберите значение из списка'
-    bot.send_message(m.chat.id, answer, reply_markup=keyboard)
+    bot.send_message(m.chat.id, '`'+answer+'`', reply_markup=keyboard)
 
 
 if __name__ == '__main__':
