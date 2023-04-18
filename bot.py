@@ -23,9 +23,11 @@ def start(m):
     }
 
     if m.chat.last_name: request['lastname'] = m.chat.last_name
-    logger.warning(request)
 
     request['answer'] = '`'+actions[m.text]()+'`' if m.text in actions else 'Выберите значение из списка'
+
+    logger.warning(request)
+
     bot.send_message(m.chat.id,  request['answer'], reply_markup=keyboard, parse_mode='MarkdownV2')
 
 
