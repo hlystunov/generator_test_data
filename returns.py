@@ -81,6 +81,40 @@ def snils():
     nums.append(cont)
     return ''.join([str(x) for x in nums])
 
+# СНИЛС ГОСКЛЮЧ
+def snils_goskey():
+    key = 3 * random.randint(100, 333)
+    _key = list(map(int, str(key)))
+
+    nums = [
+        0 if x in (0, 1, 2)
+        else '-' if x == 3
+        else _key[0] if x == 4
+        else _key[1] if x == 5
+        else _key[2] if x == 6
+        else '-' if x == 7
+        else ' ' if x == 11
+        else random.randint(0, 9)
+        for x in range(0, 12)
+    ]
+
+    cont = (nums[10] * 1) + (nums[9] * 2) + (nums[8] * 3) + \
+           (nums[6] * 4) + (nums[5] * 5) + (nums[4] * 6) + \
+           (nums[2] * 7) + (nums[1] * 8) + (nums[0] * 9)
+
+    if cont in (100, 101):
+        cont = '00'
+
+    elif cont > 101:
+        cont = (cont % 101)
+        if cont in (100, 101): cont = '00'
+        elif cont < 10: cont = '0' + str(cont)
+
+    elif cont < 10: cont = '0' + str(cont)
+
+    nums.append(cont)
+    return ''.join([str(x) for x in nums])
+
 # Создание ИНН
 def inn(l):
     nums = [
