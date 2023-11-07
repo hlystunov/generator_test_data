@@ -83,7 +83,7 @@ def snils():
 
 # СНИЛС ГОСКЛЮЧ
 def snils_goskey():
-    key = 3 * random.randint(100, 333)
+    key = 3 * random.randint(100000, 333333)
     _key = list(map(int, str(key)))
 
     nums = [
@@ -93,6 +93,9 @@ def snils_goskey():
         else _key[1] if x == 5
         else _key[2] if x == 6
         else '-' if x == 7
+        else _key[3] if x == 8
+        else _key[4] if x == 9
+        else _key[5] if x == 10
         else ' ' if x == 11
         else random.randint(0, 9)
         for x in range(0, 12)
