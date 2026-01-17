@@ -5,7 +5,7 @@ from collections import OrderedDict
 from returns import \
     inn_entity, inn_individual, ogrn_entity, ogrn_individual, \
     snils, full_name, birdthay, login, mail, phone, uuid, guid, oms, \
-    okpo, okpo_individual, guid_lower, passport_number, snils_goskey
+    okpo, okpo_individual, guid_lower, passport_number, snils_goskey, sfr_number
 
 actions = OrderedDict([
     ('ИНН', inn_entity),
@@ -26,4 +26,5 @@ actions = OrderedDict([
     ("GUID LOWER", guid_lower),
     ("Серия и номер паспорта РФ", passport_number),
     ("СНИЛС ГОСКЛЮЧ", snils_goskey),
+    ("Номер СФР", sfr_number)
 ])

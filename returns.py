@@ -234,3 +234,20 @@ def passport_number():
 
     return ''.join(map(str, nums[:4])) + ' ' + ''.join(map(str, nums[4:]))
 
+def sfr_number():
+    order_number = random.randint(100000000, 999999999)
+    s_num = str(order_number)
+
+    coefficients = [2, 1, 2, 1, 2, 1, 2, 1, 2]
+
+    total_sum = 0
+    for i in range(9):
+        digit = int(s_num[i])
+        res = digit * coefficients[i]
+
+        if res > 9:
+            res -= 9
+        total_sum += res
+
+    check_digit = (10 - (total_sum % 10)) % 10
+    return f"{s_num}{check_digit}"
